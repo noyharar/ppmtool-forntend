@@ -7,7 +7,7 @@ import {
 } from "./types";
 
 
-export const getBacklogById = (id, history) => async dispatch => {
+export const getBacklog = (id) => async dispatch => {
     try{
         const res = await axios.get(`/api/backlog/${id}`);
         // history.push("/dashboard")

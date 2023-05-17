@@ -112,7 +112,7 @@ class AddProjectTask extends Component {
                                     <select className="form-control form-control-lg" name="status"  value={this.state.status}                                            onChange={this.onChange}
                                     >
                                         <option value="">Select Status</option>
-                                        <option value="TO_DO">TO DO</option>
+                                        <option value="TODO">TO DO</option>
                                         <option value="IN_PROGRESS">IN PROGRESS</option>
                                         <option value="DONE">DONE</option>
                                     </select>
