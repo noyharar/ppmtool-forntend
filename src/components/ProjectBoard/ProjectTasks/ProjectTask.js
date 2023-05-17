@@ -21,7 +21,7 @@ class ProjectTask extends Component {
             priorityClass = "bg-info text-light";
             priorityString = "LOW";
         }
-
+        console.log("werwe" + project_task)
         return (
             <div className="card mb-1 bg-light">
 
@@ -33,7 +33,7 @@ class ProjectTask extends Component {
                     <p className="card-text text-truncate ">
                         {project_task.acceptanceCriteria}
                     </p>
-                    <Link to={`/`} className="btn btn-primary">
+                    <Link to={`/updateProject/${project_task.projectIdentifier}`} className="btn btn-primary">
                         View / Update
                     </Link>
 

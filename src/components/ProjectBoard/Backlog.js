@@ -4,11 +4,18 @@ import ProjectTask from "./ProjectTasks/ProjectTask";
 
 class Backlog extends Component {
     render() {
-        const {project_tasks_props} = this.props;
-        let todo_tasks = project_tasks_props.filter(pt => pt.status === 'TODO');
-        let inprogress_tasks = project_tasks_props.filter(pt => pt.status === 'IN_PROGRESS');
-        let done_tasks = project_tasks_props.filter(pt => pt.status === 'DONE');
 
+        const {project_tasks_props} = this.props;
+        // console.log(project_tasks_props)
+        let todo_tasks;
+        let inprogress_tasks;
+        let done_tasks;
+        if(project_tasks_props) {
+            console.log(project_tasks_props)
+            todo_tasks = project_tasks_props.filter(pt => pt.status === 'TODO');
+            inprogress_tasks = project_tasks_props.filter(pt => pt.status === 'IN_PROGRESS');
+            done_tasks = project_tasks_props.filter(pt => pt.status === 'DONE');
+        }
         return (
                 <div className="container">
                     <div className="row">
@@ -18,7 +25,7 @@ class Backlog extends Component {
                                     <h3>TO DO</h3>
                                 </div>
                             </div>
-                            {todo_tasks.map(project_task => (
+                            {todo_tasks && todo_tasks.map(project_task => (
                             <ProjectTask key={project_task.id} project_task={project_task}/>
                             ))}
                             </div>
@@ -28,7 +35,7 @@ class Backlog extends Component {
                                     <h3>In Progress</h3>
                                 </div>
                             </div>
-                            {inprogress_tasks.map(project_task => (
+                            {inprogress_tasks && inprogress_tasks.map(project_task => (
                                 <ProjectTask key={project_task.id} project_task={project_task}/>
                             ))}
                         </div>
@@ -38,7 +45,7 @@ class Backlog extends Component {
                                     <h3>Done</h3>
                                 </div>
                             </div>
-                            {done_tasks .map(project_task => (
+                            {done_tasks && done_tasks.map(project_task => (
                                 <ProjectTask key={project_task.id} project_task={project_task}/>
                             ))}
                         </div>
