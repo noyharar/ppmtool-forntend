@@ -4,7 +4,8 @@ import classnames from "classnames";
 import { Link } from "react-router-dom";
 import {
     getProjectTask,
-    updateProjectTask
+    updateProjectTask,
+
 } from "../../../actions/backlogActions";
 import PropTypes from "prop-types";
 
@@ -199,5 +200,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { getProjectTask, updateProjectTask }
+    { getProjectTask, updateProjectTask, deleteProject }
 )(UpdateProjectTask);
